@@ -8,7 +8,7 @@ app.use(express.json())
 
 const mongoose=require('mongoose')
 mongoose
-.connect('mongodb://localhost:27017/ExpenseTracker')
+.connect('mongodb+srv://sathya:UCPKD1CiN9n5AgRX@cluster0.4jwttmw.mongodb.net/ExpenseTracker')
 .then(console.log("connected to mongo"))
 
 const expenseSchema= new mongoose.Schema({
