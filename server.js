@@ -24,11 +24,12 @@ app.get("/api",async(req,res)=>{
     res.json(expenses)
 })
 
-app.post('/api',(req,res)=>{
+app.post('/api',async(req,res)=>{
     const {date,category,amount}=req.body
-    const newitem=new Expenses({date: new Date().toLocaleDateString(),category,amount})
+    const newitem=await Expenses({date: new Date().toLocaleDateString(),category,amount})
     newitem.save();
     res.status(200).json(newitem)
+    
  })
 
  app.put("/api/:id",async(req,res)=>{
